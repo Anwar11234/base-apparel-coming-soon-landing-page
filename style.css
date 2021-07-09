@@ -1,0 +1,161 @@
+:root{ 
+ --Desaturated-Red: hsl(0, 36%, 70%);
+--Soft-Red: hsl(0, 93%, 68%);
+--Dark-Grayish-Red: hsl(0, 6%, 24%);
+/*
+    ### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+*/
+}
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 , p { 
+    margin: 0;
+    color: var(--Desaturated-Red);
+}
+
+body{ 
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: url(images/bg-pattern-desktop.svg);
+    overflow-x: hidden;
+}
+
+.wrapper{ 
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+header{ 
+    padding: 2rem;
+}
+
+.image{ 
+    min-height: 50vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(images/hero-mobile.jpg);
+    background-position: center 0%;
+}
+
+main{ 
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.main-content h1{ 
+    text-transform: uppercase;
+    margin: 3.5rem 0 2rem 0;
+    font-weight: lighter;
+    font-size: clamp(4rem , 1rem + 3.5vw , 6.5rem);
+    font-size: 4rem;
+    letter-spacing: 8px;
+    line-height: 1.1;
+}
+
+.main-content h1 span{ 
+    display: block;
+    color: var(--Dark-Grayish-Red);
+    font-weight: bold;
+}
+
+P{
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.5;
+    margin-bottom: 3.5rem;
+    max-width: 40ch;
+}
+
+form{ 
+    position: relative;
+    width: min(90% , 50ch);
+    margin: 1rem auto;
+}
+
+
+input{ 
+    background: transparent;
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem ;
+    border-radius: 50vw;
+    outline: none;
+    color: hsl(0, 36%, 70%);
+    border: 1px solid currentColor;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: inherit;
+    opacity: 0.75;
+}
+
+input:focus{ 
+    border: 3px solid hsl(0, 66%, 70%);
+}
+
+.arrow{ 
+    background:linear-gradient(135deg ,hsl(0, 80%, 86%) , hsl(0, 74%, 74%) );
+    border-radius: 50vw;
+    padding: 1.1rem 2.5rem;
+    border: 0;
+    cursor: pointer;
+    transition: transform 250ms ease-in-out;
+    box-shadow: 0 8px 45px rgba(0,0,0,0.25);
+    position: absolute;
+    top: -2px;
+    right: 0%;
+}
+
+.arrow:hover{ 
+    transform: translateX(20%);
+}
+
+.error{ 
+    position: absolute;
+    top:17%;
+    right: 25%;
+    opacity: 0;
+    margin-right: 1rem;
+}
+.errorMsg{ 
+    color: #fb6662;
+    font-size: 1em;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+@media(min-width:700px){ 
+    .wrapper{ 
+        grid-template-columns: 5vw 3fr 2.5fr;
+        grid-template-rows: 180px 1fr;
+    }
+    .main-content h1{ 
+        margin-top: 0;
+    }
+    header{ 
+        grid-column: 2/3;
+        align-self: center;
+    }
+    main{ 
+        grid-column: 2/3;
+        grid-row: 2/3;
+        text-align: left;
+    }
+    .image{ 
+        background-image: url(images/hero-desktop.jpg);
+        grid-row: 1/-1;
+        grid-column: 3/4;
+        min-height: 100vh;
+    }
+    form{ 
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
